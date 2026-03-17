@@ -1,0 +1,64 @@
+factors:
+  - name: playerCount
+    desc: Number of players (always 1 for this experiment)
+    values:
+      - value: 1
+  - name: lengthCategory
+    desc: Video length category
+    values:
+      - value: short
+        desc: Short videos (< 1 minute)
+      - value: long
+        desc: Long videos (1-5 minutes)
+  - name: llmConfig
+    desc: LLM chat configuration
+    values:
+      - value: with-video
+        desc: LLM with semantic video understanding (correct answers)
+      - value: with-video-incorrect
+        desc: LLM with semantic video understanding (incorrect answers in round 3)
+      - value: none
+        desc: No LLM (control condition)
+
+treatments:
+  - name: Control - Short Videos
+    desc: Control condition with short videos (no LLM)
+    factors:
+      playerCount: 1
+      lengthCategory: short
+      llmConfig: none
+
+  - name: Control - Long Videos
+    desc: Control condition with long videos (no LLM)
+    factors:
+      playerCount: 1
+      lengthCategory: long
+      llmConfig: none
+
+  - name: Treatment - Short Videos
+    desc: Treatment condition with short videos and LLM (correct)
+    factors:
+      playerCount: 1
+      lengthCategory: short
+      llmConfig: with-video
+
+  - name: Treatment - Long Videos
+    desc: Treatment condition with long videos and LLM (correct)
+    factors:
+      playerCount: 1
+      lengthCategory: long
+      llmConfig: with-video
+
+  - name: Treatment Wrong Answers - Short Videos
+    desc: Treatment with short videos and incorrect LLM responses in round 3
+    factors:
+      playerCount: 1
+      lengthCategory: short
+      llmConfig: with-video-incorrect
+
+  - name: Treatment Wrong Answers - Long Videos
+    desc: Treatment with long videos and incorrect LLM responses in round 3
+    factors:
+      playerCount: 1
+      lengthCategory: long
+      llmConfig: with-video-incorrect

@@ -1,0 +1,9 @@
+name = "vllm_search"
+
+[tajriba.auth]
+srtoken = "REPLACE_WITH_YOUR_TOKEN"
+
+[[tajriba.auth.users]]
+name = "Admin"
+username = "admin"
+password = "REPLACE_WITH_YOUR_PASSWORD"
